@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">IntegradorDonatiSayagoNotBored</string>
+    <string name="app_title">Not Bored</string>
+    <string name="participants_amount">Participants</string>
+    <string name="participant_amount_hint">Insert participant amount</string>
+    <string name="button_start">Start</string>
+    <string name="terms_and_conditions">Terms and conditions</string>
 </resources>
