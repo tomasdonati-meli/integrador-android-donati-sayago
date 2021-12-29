@@ -5,4 +5,5 @@
     <string name="participant_amount_hint">Insert participant amount</string>
     <string name="button_start">Start</string>
     <string name="terms_and_conditions">Terms and conditions</string>
+    <string name="activitySuggTitle">Activities</string>
 </resources>
