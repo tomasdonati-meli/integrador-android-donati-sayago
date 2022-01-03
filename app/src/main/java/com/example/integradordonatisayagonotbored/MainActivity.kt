@@ -8,7 +8,7 @@ import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import com.example.integradordonatisayagonotbored.databinding.ActivityMainBinding
 
-
+const val PARTICIPANT_AMOUNT = "participantAmount"
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -20,7 +20,9 @@ class MainActivity : AppCompatActivity() {
 
         //binding.EditTextMainActivityParticipantAmount.addTextChangedListener()
         binding.ButtonMainActivityStart.setOnClickListener {
-            val intentSuggestionAct = Intent(this,SuggestionActivitiesActivity::class.java)
+            val intentSuggestionAct = Intent(this,SuggestionActivitiesActivity::class.java).apply {
+                putExtra(PARTICIPANT_AMOUNT,binding.EditTextMainActivityParticipantAmount.text)
+            }
             startActivity(intentSuggestionAct)
 
         }
