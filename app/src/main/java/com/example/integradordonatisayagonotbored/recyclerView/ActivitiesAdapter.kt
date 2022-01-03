@@ -1,16 +1,16 @@
-package com.example.integradordonatisayagonotbored.RecyclerView
+package com.example.integradordonatisayagonotbored.recyclerView
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.integradordonatisayagonotbored.R
 
-class ActivitiesAdapter(private var activitiesCategoriesList : List<String>) : RecyclerView.Adapter<ActivitiesViewHolder>(){
+class ActivitiesAdapter(private var activitiesCategoriesList : List<String>, private val listener : OnItemClickListener) : RecyclerView.Adapter<ActivitiesViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActivitiesViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
 
-        return ActivitiesViewHolder(layoutInflater.inflate(R.layout.cell_category, parent, false))
+        return ActivitiesViewHolder(layoutInflater.inflate(R.layout.cell_category, parent, false), listener)
     }
 
     override fun onBindViewHolder(holder: ActivitiesViewHolder, position: Int) {
@@ -19,4 +19,9 @@ class ActivitiesAdapter(private var activitiesCategoriesList : List<String>) : R
     }
 
     override fun getItemCount() = activitiesCategoriesList.size
+
+}
+
+interface OnItemClickListener{
+    fun onItemClick(position: Int)
 }

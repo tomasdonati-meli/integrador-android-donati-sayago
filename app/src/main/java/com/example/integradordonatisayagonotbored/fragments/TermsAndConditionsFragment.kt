@@ -1,4 +1,4 @@
-package com.example.integradordonatisayagonotbored
+package com.example.integradordonatisayagonotbored.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
+import android.widget.ImageButton
 import com.example.integradordonatisayagonotbored.databinding.FragmentTermsAndConditionsBinding
 
 
@@ -24,7 +24,7 @@ class TermsAndConditionsFragment : Fragment() {
         _binding = FragmentTermsAndConditionsBinding.inflate(inflater, container, false)
 
         //setting up close button
-        val closeButton : Button = binding.ButtonTermsFragmentClose
+        val closeButton : ImageButton = binding.ButtonTermsFragmentClose
         closeButton.setOnClickListener {
             parentFragmentManager.beginTransaction().remove(this).commit()
         }

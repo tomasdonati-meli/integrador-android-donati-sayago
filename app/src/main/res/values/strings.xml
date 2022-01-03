@@ -40,5 +40,17 @@
     nullam pellentesque.
     </string>
     <string name="not_bored">Not Bored</string>
+    <string name="category_title">Title</string>
+    <string name="activity_description">Description</string>
+    <string name="participants">Participants</string>
+    <string name="participant_amount">Participant Amount</string>
+    <string name="price">Price</string>
+    <string name="price_value">Price Value</string>
+    <string name="category_name">Category Name</string>
+    <string name="try_another">Try Another</string>
+    <string name="random_icon">Random Icon</string>
+    <string name="price_icon">Price Icon</string>
+    <string name="participant_amount_icon">Participant Amount Icon</string>
+    <string name="back_button">Back Button</string>
 
 </resources>
