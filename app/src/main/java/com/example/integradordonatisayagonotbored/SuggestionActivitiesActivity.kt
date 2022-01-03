@@ -9,13 +9,12 @@ import org.w3c.dom.Text
 class SuggestionActivitiesActivity : AppCompatActivity() {
     private lateinit var binding : ActivitySuggestionActivitiesBinding
     private lateinit var adapter: ActivitiesAdapter
-    private lateinit var participantAmount : Text
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySuggestionActivitiesBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //intent.extras?.run { participantAmount = getString() }
+        val participantAmount = intent.getStringExtra(PARTICIPANT_AMOUNT)
         setupRecyclerView()
     }
 

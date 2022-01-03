@@ -1,17 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TermsAndConditionsFragment"
     android:background="#FFFF"
-    android:clickable="true">
+    android:clickable="true"
+    tools:context=".TermsAndConditionsFragment">
+
+    <Button
+        android:id="@+id/ButtonTermsFragmentClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        android:text="X"
+        app:layout_constraintBottom_toTopOf="@+id/TextViewTermsFragmentTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/TextViewTermsFragmentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="38dp"
         android:text="@string/termsAndConditionTitle"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="30dp" />
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/TextViewTermsFragmentNotBored"
+        app:layout_constraintEnd_toEndOf="@+id/TextViewTermsFragmentNotBored"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonTermsFragmentClose" />
+
+    <TextView
+        android:id="@+id/TextViewTermsFragmentNotBored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:text="@string/app_title"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/ScrollViewTermsFragmentLorem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewTermsFragmentTitle" />
+
+    <ScrollView
+        android:id="@+id/ScrollViewTermsFragmentLorem"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewTermsFragmentNotBored">
+
+        <TextView
+            android:id="@+id/TextViewTermsFragmentLorem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/termsAndConditionText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TextViewTermsFragmentNotBored" />
+
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

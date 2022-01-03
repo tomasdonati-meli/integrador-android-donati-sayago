@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         //binding.EditTextMainActivityParticipantAmount.addTextChangedListener()
         binding.ButtonMainActivityStart.setOnClickListener {
             val intentSuggestionAct = Intent(this,SuggestionActivitiesActivity::class.java).apply {
-                putExtra(PARTICIPANT_AMOUNT,binding.EditTextMainActivityParticipantAmount.text)
+                putExtra(PARTICIPANT_AMOUNT, binding.EditTextMainActivityParticipantAmount.text)
             }
             startActivity(intentSuggestionAct)
 
