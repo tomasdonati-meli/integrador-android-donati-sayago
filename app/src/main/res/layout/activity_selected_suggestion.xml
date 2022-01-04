@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".activities.SelectedSuggestionActivity">
 
-    <!-- hasta aca appbar -->
-
     <ImageButton
         android:id="@+id/ImageButtonSelectedSuggestionBackButton"
         android:layout_width="46dp"
