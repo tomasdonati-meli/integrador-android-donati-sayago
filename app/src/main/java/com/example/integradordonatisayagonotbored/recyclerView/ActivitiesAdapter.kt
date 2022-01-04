@@ -21,7 +21,7 @@ class ActivitiesAdapter(private var activitiesCategoriesList : List<String>, pri
     override fun getItemCount() = activitiesCategoriesList.size
 
 }
-
+//this interface is used to deal with the OnClicks for the RecyclerView items
 interface OnItemClickListener{
     fun onItemClick(position: Int)
 }

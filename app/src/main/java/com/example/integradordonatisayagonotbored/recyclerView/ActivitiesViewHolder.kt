@@ -8,13 +8,15 @@ class ActivitiesViewHolder(view: View, private val listener : OnItemClickListene
     private val binding = CellCategoryBinding.bind(view)
 
     fun bindCategory(categoryAtPosition: String) {
-        binding.TextViewCellCategory.text = categoryAtPosition // TODO VEEEEERRRRRRR
+        binding.TextViewCellCategory.text = categoryAtPosition
     }
 
+    //init works as the body for the constructor
     init {
         view.setOnClickListener(this)
     }
 
+    //override of the interface method
     override fun onClick(p0: View?) {
         val position = adapterPosition
         if(position != RecyclerView.NO_POSITION){

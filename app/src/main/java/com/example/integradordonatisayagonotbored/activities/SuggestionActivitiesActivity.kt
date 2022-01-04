@@ -5,22 +5,39 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.integradordonatisayagonotbored.Categories
+import com.example.integradordonatisayagonotbored.NotBoredApplication.Companion.prefs
 import com.example.integradordonatisayagonotbored.recyclerView.ActivitiesAdapter
 import com.example.integradordonatisayagonotbored.databinding.ActivitySuggestionActivitiesBinding
 import com.example.integradordonatisayagonotbored.recyclerView.OnItemClickListener
+import com.example.integradordonatisayagonotbored.retrofit.ApiBoredService
+import com.example.integradordonatisayagonotbored.retrofit.BoredResponse
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
-const val CATEGORY_NAME = "categoryName"
 class SuggestionActivitiesActivity : AppCompatActivity(), OnItemClickListener{
     private lateinit var binding : ActivitySuggestionActivitiesBinding
     private lateinit var adapter: ActivitiesAdapter
-
-    private val categories = Categories()
+    private val categories = Categories()//created an instance of our class holding the category list
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySuggestionActivitiesBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setupRecyclerView()
+
+        setupRecyclerView() //set up method for our recycler view
+        setOnClicks()
+
+    }
+
+    //TODO for now, it only returns education activities
+    private fun setOnClicks(){
+        binding.ButtonSuggestionActivityRandomSearch.setOnClickListener {
+            val intentSelectedSuggestionAct = Intent(this, SelectedSuggestionActivity::class.java)
+            startActivity(intentSelectedSuggestionAct)
+        }
     }
 
     private fun setupRecyclerView() {
@@ -28,14 +45,11 @@ class SuggestionActivitiesActivity : AppCompatActivity(), OnItemClickListener{
         binding.RVSuggestionActivity.adapter = adapter
     }
 
+    //method used by the listener to manage click events on RecyclerView items
     override fun onItemClick(position: Int) {
         val selectedElement = categories.categoriesList[position]
-        Toast.makeText(this, "$selectedElement clicked", Toast.LENGTH_SHORT).show()
-        val intentSelectedSuggestionAct = Intent(this, SelectedSuggestionActivity::class.java).apply {
-            putExtra(PARTICIPANT_AMOUNT, intent.getStringExtra(PARTICIPANT_AMOUNT))
-            putExtra(CATEGORY_NAME, selectedElement)
-        }
-
+        prefs.saveCategoryName(selectedElement)
+        val intentSelectedSuggestionAct = Intent(this, SelectedSuggestionActivity::class.java)
         startActivity(intentSelectedSuggestionAct)
     }
 }
