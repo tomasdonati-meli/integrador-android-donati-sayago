@@ -10,68 +10,81 @@
 
     <ImageButton
         android:id="@+id/ImageButtonSelectedSuggestionBackButton"
-        android:layout_width="55dp"
-        android:layout_height="48dp"
+        android:layout_width="46dp"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="97dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/ic_baseline_chevron_left_24"
         android:contentDescription="@string/back_button"
+        app:layout_constraintBottom_toBottomOf="@+id/TextViewSelectedSuggestionTitle"
         app:layout_constraintEnd_toStartOf="@+id/TextViewSelectedSuggestionTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/TextViewSelectedSuggestionTitle"
-        android:layout_width="0dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="137dp"
-        tools:text="@string/category_title"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="@string/category_title"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ImageButtonSelectedSuggestionBackButton"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/TextViewSelectedSuggestionDescription"
-        android:layout_width="155dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="166dp"
+        android:layout_width="256dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginBottom="44dp"
+        android:gravity="center"
         android:text="@string/activity_description"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/TextViewSelectedSuggestionParticipants"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/TextViewSelectedSuggestionTitle" />
 
     <ImageView
         android:id="@+id/ImageViewSelectedSuggestionParticipants"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="329dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="328dp"
         android:background="@drawable/ic_baseline_person_24"
         android:contentDescription="@string/participant_amount_icon"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextViewSelectedSuggestionTitle" />
+        app:layout_constraintEnd_toStartOf="@+id/TextViewSelectedSuggestionParticipants"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/TextViewSelectedSuggestionParticipants"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
+        android:layout_marginEnd="77dp"
         android:text="@string/participants"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/TextViewSelectedSuggestionParticipantAmount"
         app:layout_constraintStart_toEndOf="@+id/ImageViewSelectedSuggestionParticipants"
         app:layout_constraintTop_toTopOf="@+id/ImageViewSelectedSuggestionParticipants" />
 
     <TextView
         android:id="@+id/TextViewSelectedSuggestionParticipantAmount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="41dp"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="96dp"
         android:text="@string/participant_amount"
-        app:layout_constraintBaseline_toBaselineOf="@+id/TextViewSelectedSuggestionParticipants"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/TextViewSelectedSuggestionParticipants"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewSelectedSuggestionDescription" />
 
     <ImageView
         android:id="@+id/ImageViewSelectedSuggestionPrice"
@@ -79,8 +92,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="61dp"
+        android:layout_marginEnd="39dp"
         android:background="@drawable/ic_baseline_attach_money_24"
         android:contentDescription="@string/price_icon"
+        app:layout_constraintEnd_toStartOf="@+id/TextViewSelectedSuggestionPrice"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ImageViewSelectedSuggestionParticipants" />
 
@@ -88,18 +103,25 @@
         android:id="@+id/TextViewSelectedSuggestionPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
+        android:layout_marginEnd="128dp"
         android:text="@string/price"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/TextViewSelectedSuggestionPriceValue"
         app:layout_constraintStart_toEndOf="@+id/ImageViewSelectedSuggestionPrice"
         app:layout_constraintTop_toTopOf="@+id/ImageViewSelectedSuggestionPrice" />
 
     <TextView
         android:id="@+id/TextViewSelectedSuggestionPriceValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="66dp"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="56dp"
         android:text="@string/price_value"
-        app:layout_constraintStart_toStartOf="@+id/TextViewSelectedSuggestionParticipantAmount"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/TextViewSelectedSuggestionRandomCategoryName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/TextViewSelectedSuggestionPrice"
         app:layout_constraintTop_toBottomOf="@+id/TextViewSelectedSuggestionParticipantAmount" />
 
     <ImageView
@@ -107,13 +129,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="155dp"
-        android:layout_marginBottom="154dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginBottom="152dp"
         android:background="@drawable/ic_baseline_format_list_bulleted_24"
         android:contentDescription="@string/random_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextViewSelectedSuggestionParticipants" />
+        app:layout_constraintTop_toBottomOf="@+id/ImageViewSelectedSuggestionParticipants" />
 
     <TextView
         android:id="@+id/TextViewSelectedSuggestionRandomCategoryName"
@@ -121,6 +143,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="39dp"
         android:text="@string/category_name"
+        android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/ImageViewSelectedSuggestionRandomCategory"
         app:layout_constraintTop_toTopOf="@+id/ImageViewSelectedSuggestionRandomCategory" />
 

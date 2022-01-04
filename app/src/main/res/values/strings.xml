@@ -52,5 +52,6 @@
     <string name="price_icon">Price Icon</string>
     <string name="participant_amount_icon">Participant Amount Icon</string>
     <string name="back_button">Back Button</string>
+    <string name="random">Random</string>
 
 </resources>

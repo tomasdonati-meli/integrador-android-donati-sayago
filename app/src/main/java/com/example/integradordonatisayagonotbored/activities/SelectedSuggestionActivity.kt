@@ -34,6 +34,9 @@ class SelectedSuggestionActivity : AppCompatActivity() {
         binding.ImageButtonSelectedSuggestionTryAnother.setOnClickListener {
             apiCallByCategory(categoryName, participantAmount)
         }
+        binding.ImageButtonSelectedSuggestionBackButton.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     //method used to set up retrofit instance
@@ -60,12 +63,27 @@ class SelectedSuggestionActivity : AppCompatActivity() {
                     binding.TextViewSelectedSuggestionTitle.text = categoryName
                     binding.TextViewSelectedSuggestionDescription.text = boredResponse?.activityDescription
                     binding.TextViewSelectedSuggestionParticipantAmount.text = participantAmount.toString()
-                    binding.TextViewSelectedSuggestionPriceValue.text = boredResponse?.price
+                    binding.TextViewSelectedSuggestionPriceValue.text = handlePrice(boredResponse?.price)
                     binding.TextViewSelectedSuggestionRandomCategoryName.text = categoryName
                 }
             }
         }
     }
 
-    private fun modifyPriceView(){}
+    private fun handlePrice(price: String?): String {
+        return when (price) {
+            "0" -> "Free"
+            "0.1" -> "Low"
+            "0.2" -> "Low"
+            "0.3" -> "Low"
+            "0.4" -> "Medium"
+            "0.5" -> "Medium"
+            "0.6" -> "Medium"
+            "0.7" -> "High"
+            "0.8" -> "High"
+            "0.9" -> "High"
+            "1.0" -> "High"
+            else -> "--"
+        }
+    }
 }

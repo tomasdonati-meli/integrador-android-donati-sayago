@@ -29,7 +29,6 @@ class SuggestionActivitiesActivity : AppCompatActivity(), OnItemClickListener{
 
         setupRecyclerView() //set up method for our recycler view
         setOnClicks()
-
     }
 
     //TODO for now, it only returns education activities
